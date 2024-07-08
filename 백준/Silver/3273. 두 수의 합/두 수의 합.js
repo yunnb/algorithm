@@ -3,17 +3,16 @@ const [n, input, x] = fs.readFileSync(0).toString().trim().split('\n');
 const inputArr = input.trim().split(' ');
 
 inputArr.sort((a, b) => a - b);
-let start = 0, end = inputArr.length - 1, cnt = 0;
+let left = 0, right = inputArr.length - 1, cnt = 0;
 
-while (start < end) {
-    let a = +inputArr[start];
-    let b = +inputArr[end];
+while (left < right) {
+    let sum = +inputArr[left] + +inputArr[right];
 
-    if (a + b === +x) {
+    if (sum === +x) {
         cnt++;
-        start++;
+        left++;
     }
-    else if (a + b < x) start++;
-    else end--;
+    else if (sum < x) left++;
+    else right--;
 }
 console.log(cnt);

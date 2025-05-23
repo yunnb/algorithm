@@ -11,7 +11,7 @@ def solution(b, h, a):
                 return -1
         else:       
             cnt += 1
-            c_h = c_h + b[1] if c_h + b[1] < h else h
+            c_h = min(c_h+b[1], h)
             if cnt == b[0]: 
                 c_h = min(c_h+b[2], h)
                 cnt = 0

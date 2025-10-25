@@ -8,8 +8,4 @@ for i, n in enumerate(nums):
 
 for _ in range(m):
     i, j = map(int, input().split())
-
-    if i == 1:
-        print(dp[j])
-    else:
-        print(dp[j] - dp[i - 1])
+    print(dp[j] - dp[i - 1])

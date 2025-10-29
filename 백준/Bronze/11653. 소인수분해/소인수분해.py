@@ -4,13 +4,12 @@ arr = []
 # 나눠진다면 소인수 목록에 추가
 # 안나눠진다면 i+1
 
-for i in range(2, n+1):
-    if n == 1: break
+for i in range(2, n + 1):
+    if i * i > n: break # 속도 비교! 
 
-    if n % i == 0: # 나누어 떨어진다면
-        while n >= 1:
-            if n % i != 0: break
+    if n % i == 0:
+        while n % i == 0:
+            print(i)
             n //= i
-            arr.append(i)
 
-print(*arr, sep='\n')
+if n != 1: print(n)

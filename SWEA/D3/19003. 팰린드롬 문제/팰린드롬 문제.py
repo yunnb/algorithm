@@ -13,13 +13,13 @@ for t in range(1, t + 1):
         if string == rev:
             center += ''.join(string)
             if center == center[::-1]:
-                ans += len(rev)
+                ans += m
                 continue
 
         if rev in strings:
             rev_idx = strings.index(rev)
             strings.pop(rev_idx)
-            ans += len(rev) * 2
+            ans += m * 2
 
     print(f'#{t}', ans)
 

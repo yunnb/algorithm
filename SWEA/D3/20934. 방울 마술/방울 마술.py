@@ -1,15 +1,22 @@
 t = int(input())
 
-for t in range(t):
-    s, k = input().split()
-    k = int(k)
-    start = s.index('o')
+for tc in range(1, t + 1):
+    cmd = list(input().split())
+    cups = cmd[0]
+    k = int(cmd[1])
+
+    idx = cups.index('o')
 
     if k == 0:
-        ans = start
-    elif start == 1:
-        ans = 1 if k % 2 == 0 else 0
-    else:
-        ans = 0 if k % 2 == 0 else 1
+        print(f'#{tc} {idx}')
+        continue
 
-    print(f'#{t + 1} {ans}')
+    start = 1 if idx == 1 else 0
+
+    ans = 0
+    if start == 0:
+        ans = 0 if k % 2 == 0 else 1
+    else:
+        ans = 1 if k % 2 == 0 else 0
+
+    print(f'#{tc} {ans}')

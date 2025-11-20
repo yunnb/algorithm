@@ -1,15 +1,11 @@
 t = int(input())
 
-for _ in range(t):
+for tc in range(1, t + 1):
     a, b, n = map(int, input().split())
 
-    x, y = a, b
     cnt = 0
-    while x <= n and y <= n:
+    while a <= n and b <= n:
         cnt += 1
-        if x >= y:
-            y += x
-        else:
-            x += y
-
+        if a <= b: a += b
+        else: b += a
     print(cnt)

@@ -1,10 +1,18 @@
 t = int(input())
 
-for _ in range(t):
-    str = input()
+for tc in range(1, t + 1):
+    arr = input()
+
     k = int(input())
-    cmd = list(map(int, input().split()))
+    cmds = list(map(int, input().split()))
 
-    idx = sum(cmd) % len(str)
+    for cmd in cmds:
+        if cmd == 0: continue
+        elif cmd > 0:
+            i = cmd % len(arr)
+            arr = arr[i:] + arr[:i]
+        else:
+            i = -cmd % len(arr)
+            arr = arr[-i:] + arr[:-i]
 
-    print(str[idx:] + str[:idx])
+    print(arr)

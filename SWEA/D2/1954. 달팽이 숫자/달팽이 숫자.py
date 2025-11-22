@@ -14,14 +14,12 @@ for tc in range(1, t + 1):
     x, y = 0, 0
     cnt = 1
     d = 0
-
-    for _ in range(n * n):
+    for i in range(n * n):
         grid[x][y] = cnt
 
         nx, ny = x + dxs[d], y + dys[d]
         if in_range(nx, ny) and grid[nx][ny] == 0:
-            grid[nx][ny] = cnt
-            x, y = x + dxs[d], y + dys[d]
+            x, y = nx, ny
         else:
             d = (d + 1) % 4
             x, y = x + dxs[d], y + dys[d]

@@ -15,10 +15,10 @@ for tc in range(1, t + 1):
     dist = [[-1] * n for _ in range(n)]
 
     c = n // 2
+    dist[c][c] = 0
 
     q = deque()
     q.append((c, c))
-    dist[c][c] = 0
 
     ans = grid[c][c]
     while q:
